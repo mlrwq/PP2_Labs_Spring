@@ -1,0 +1,6 @@
+n = int(input())
+num = [str(x) for x in range(n+1) if x%2 == 0]
+
+even_nums = ",".join(num)
+
+print(even_nums)
