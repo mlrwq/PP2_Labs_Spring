@@ -115,12 +115,14 @@ while True:
             spawn_coin()
         
         #если наша машина врезается во вражескую машину 
-        if my_car_rect.colliderect(cars_rect):
-            game_active = False 
-            my_car_rect.midbottom = (255, 750)
+        if my_car_rect.colliderect(cars_rect): 
             cars_rect.midtop = (random.randint(100,400), -100)
             coin_rect.y = -100
-            coin_rect.x = random.randint(100,400) 
+            coin_rect.x = random.randint(100,400)
+
+            coin_count -= 5
+            if coin_count < 0:
+                game_active = False
 
         #наша машина когда сталкивается с монетой
         if my_car_rect.colliderect(coin_rect):

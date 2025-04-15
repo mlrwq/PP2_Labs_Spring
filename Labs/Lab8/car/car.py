@@ -106,9 +106,9 @@ while True:
         score = scores()
         screen.blit(coin_surf,coin_surf_rect)
         
-        if score % 10 == 0 and score != increase:
+        if coin_count % 3 == 0 and coin_count != increase:
             cars_speed += 1
-            increase = score
+            increase = coin_count
 
     else:
         screen.blit(start, (0,0))
@@ -127,6 +127,5 @@ while True:
             screen.blit(my_score, my_score_rect)
             screen.blit(my_coins, my_coins_rect)
         
-
     pygame.display.update()
     clock.tick(60)
